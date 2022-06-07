@@ -1,0 +1,35 @@
+<!--создание нового студента-->
+<div class="ui container">
+  {{> head}}
+  {{> nav}}
+  <form class="ui form" action="/create" method="POST">
+    <div class="field">
+      <label>Фамилия</label>
+      <input type="text" name="surname" placeholder="Фамилия" required>
+    </div>
+    <div class="field">
+      <label>Имя</label>
+      <input type="text" name="name" placeholder="Имя" required>
+    </div>
+    <div class="field">
+      <label>Отчество</label>
+      <input type="text" name="patronim" placeholder="Отчество" required>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <label>Дата рождения</label>
+        <input type="date" name="date" placeholder="Дата рождения" required>
+      </div>
+      <div class="field">
+        <label>Факультет</label>
+        <input type="text" name="faculty" placeholder="Факультет"required>
+      </div>
+      <div class="field">
+        <label>Группа</label>
+        <input type="text" name="group" placeholder="Группа" required>
+      </div>
+    </div>
+
+    <button class="ui button" type="submit">Добавить</button>
+  </form>
+</div>

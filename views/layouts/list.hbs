@@ -1,0 +1,27 @@
+<!--просмотр всех карточек с данными студентов-->
+<div class="ui container">
+  {{> head}}
+  {{> nav}}
+  <ul>
+    <div class="ui cards">
+      {{#each students}}
+      <div class="card">
+        <div class="content">
+          <div class="header ui container">{{surname}}&nbsp{{name}}&nbsp{{patronim}}</div>
+          <div class="meta">{{date}}</div>
+          <div class="description">
+            {{faculty}},&nbsp{{stud_group}}
+          </div>
+        </div>
+        <div class="extra content">
+          <form action="/stud_act" method="post">
+              <input type="hidden" name="id" value={{stud_id}}>
+              <button type="submit" class="ui blue basic left floated button" type="button" value="edit" name="act">Редактировать</button>
+              <button type="submit" class="ui red basic right floated button" type="button" value="delete" name="act">Удалить</button>
+          </form>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </ul>
+</div>
